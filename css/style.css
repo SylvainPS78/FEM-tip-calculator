@@ -12,8 +12,172 @@
     --Grey-200: hsl(185, 41%, 84%);
     --Grey-50: hsl(189, 47%, 97%);
     --White: hsl(0, 100%, 100%);
+    --border-radius : 20px;
 }
 
+body {
+    background-color: var(--Grey-200);
+    display:flex;
+    flex-direction: column;
+    justify-content:center; /* TBD */
+    align-items: center;
+    gap: 10px; /* TBD */
+    height: 100vh;
+    font-family: "Space Mono",sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+main {
+    background-color: var(--White);
+    border-radius: var(--border-radius);
+    padding:20px;
+    width:320px; /* TBD */
+    margin-top:20px;
+}
+
+legend {
+    all: unset;
+    color:var(--Grey-500)
+}
+
+fieldset {
+    all: unset;
+}
+
+input {
+    all: unset;
+    background-color:var(--Grey-50);
+    text-align: end;
+    padding: 10px;
+    max-width: 260px; /* TBD */
+    font-size: 24px;
+    color:var(--Green-900);
+    margin-bottom: 20px;
+    border-radius: 5px;;
+}
+
+input::placeholder {
+    color: var(--Grey-400);
+}
+
+
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+#bill-total {
+    background-image: url("../images/icon-dollar.svg");
+    background-repeat: no-repeat;
+    background-position: 10px center;
+}
+
+#number-people {
+    background-image: url("../images/icon-person.svg");
+    background-repeat: no-repeat;
+    background-position: 10px center;
+}
+
+#tip-selection {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 10px; 
+    grid-auto-rows: 1fr;
+    margin-bottom: 30px;
+}
+
+#tip-selection legend {
+    grid-column: 1/3;
+    grid-row: 1;
+    margin-bottom: 10px;
+}
+
+.tip {
+    background-color: var(--Green-900);
+    color: var(--White);
+    border:none;
+    font-family: "Space Mono",sans-serif;
+    padding:10px 10px;
+    border-radius: 5px;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.tip:hover, input:hover,#reset:hover {
+    cursor: pointer;
+}
+
+.tip:hover {
+    background-color: var(--Green-400);
+    color:var(--Green-900);
+}
+
+input:hover {
+    border:1px solid var(--Green-400);
+}
+
+#results {
+    background-color: var(--Green-900);
+    color:var(--White);
+    padding:20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap:20px;
+}
+
+.result-subtitle {
+ font-size: 12px;
+ color: var(--Grey-400);
+}
+
+.result {
+    display: grid;
+    grid-template-columns: 2;
+    grid-template-rows: 2;
+}
+
+.result-title {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.result-subtitle {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+output {
+    grid-column: 2;
+    grid-row:1/3;
+    justify-self: end;
+    align-self: center;
+    color: var(--Green-400);
+    font-size: 26px;
+}
+
+#reset {
+    background-color: var(--Green-400);
+    color: var(--Green-900);
+    border:none;
+    font-family: "Space Mono",sans-serif;
+    border-radius: 5px;
+    font-size: 24px;
+    font-weight: 700;
+    padding:10px 0px;
+}
+
+#custom-tip {
+    margin-bottom:0px;
+}
 
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
