@@ -1,76 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Frontend Mentor | Tip calculator app</title>
+  </head>
+  <body>
+    <header>
+      <img src="./images/logo.svg" alt="SPLITTER LOGO" id="logo">
+    </header>
+    <main>
+        <form id="user-input">
+            <fieldset>
+              <legend>Bill</legend>
+              <input id="bill-total" type="number" placeholder="0" name="bill-total" min="0" required>
+            </fieldset>
+            <fieldset id="tip-selection">
+              <legend>Select Tip %</legend>
+              <button class="tip" value="5">5%</button>
+              <button class="tip" value="10">10%</button>
+              <button class="tip" value="15">15%</button>
+              <button class="tip" value="25">25%</button>
+              <button class="tip" value="50">50%</button>
+              <input id="custom-tip" type="number" placeholder="Custom" name="custom-tip" min="0">
+            </fieldset>
+            <fieldset>
+              <div id="people-text">
+                <legend>Number of People</legend>
+                <p id="error-message" aria-live="assertive" aria-relevant="additions text" role="alert" hidden>Can't be zero</p>
+              </div>
+              <input id="number-people" type="number" placeholder="0" name="number-people" min="0">
+            </fieldset>
+        </form>
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./css/style.css">
+        <section id="results">
+          <div class="result">
+            <p class="result-title">Tip Amount</p>
+            <p class="result-subtitle">/ person</p>
+            <output id="tip-person" aria-live="polite"></output>
+          </div>
 
-  <title>Frontend Mentor | Tip calculator app</title>
-</head>
+          <div class="result">
+            <p class="result-title">Total</p>
+            <p class="result-subtitle">/ person</p>
+            <output id="total-person" aria-live="polite"></output>
+          </div>
 
-<body>
-  <header>
-    <img src="./images/logo.svg"
-    alt="SPLITTER LOGO"
-    height="54px" 
-    width="87px"
-    id="logo">
-  </header>
+          <button id="reset" type="reset" name="reset-btn">RESET</button>
 
-  <main>
-      <form id="user-input">
-          <fieldset>
-            <legend>Bill</legend>
-            <input id="bill-total" type="number" placeholder="0" name="bill-total" min="0">
-          </fieldset>
+        </section>
+    </main>
 
-          <fieldset id="tip-selection">
-            <legend>Select Tip %</legend>
-            <button class="tip" value="5">5%</button>
-            <button class="tip" value="10">10%</button>
-            <button class="tip" value="15">15%</button>
-            <button class="tip" value="25">25%</button>
-            <button class="tip" value="50">50%</button>
-            <input id="custom-tip" type="number" placeholder="Custom" name="custom-tip" min="0">
-          </fieldset>
+    <footer class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Sylvain Web</a>.
+    </footer>
 
-          <fieldset>
-            <div id="people-text">
-              <legend>Number of People</legend>
-              <p id="error-message" hidden>Can't be zero</p>
-            </div>
-            <input id="number-people" type="number" placeholder="0" name="number-people" min="0">
-          </fieldset>
-      </form>
-
-      <section id="results">
-        <div class="result">
-          <p class="result-title">Tip Amount</p>
-          <p class="result-subtitle">/ person</p>
-          <output id="tip-person"></output>
-        </div>
-
-        <div class="result">
-          <p class="result-title">Total</p>
-          <p class="result-subtitle">/ person</p>
-          <output id="total-person"></output>
-        </div>
-
-        <button id="reset" type="reset" name="reset-btn">RESET</button>
-
-      </section>
-  </main>
-
-  <footer class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Sylvain Web</a>.
-  </footer>
-
-  <script src="./js/script.js"></script>
-</body>
+    <script src="./js/script.js"></script>
+  </body>
 </html>
