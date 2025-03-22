@@ -40,7 +40,10 @@
           </fieldset>
 
           <fieldset>
-            <legend>Number of People</legend>
+            <div id="people-text">
+              <legend>Number of People</legend>
+              <p id="error-message" hidden>Can't be zero</p>
+            </div>
             <input id="number-people" type="number" placeholder="0" name="number-people" min="0">
           </fieldset>
       </form>
@@ -49,13 +52,13 @@
         <div class="result">
           <p class="result-title">Tip Amount</p>
           <p class="result-subtitle">/ person</p>
-          <output>$4.25</output>
+          <output id="tip-person"></output>
         </div>
 
         <div class="result">
           <p class="result-title">Total</p>
           <p class="result-subtitle">/ person</p>
-          <output>$34.54</output>
+          <output id="total-person"></output>
         </div>
 
         <button id="reset" type="reset" name="reset-btn">RESET</button>

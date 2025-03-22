@@ -13,6 +13,7 @@
     --Grey-200: hsl(185, 41%, 84%);
     --Grey-50: hsl(189, 47%, 97%);
     --White: hsl(0, 100%, 100%);
+    --Red: rgb(255, 98, 87);
     --border-radius : 20px;
 }
 
@@ -185,6 +186,15 @@ output {
 
 #custom-tip {
     margin-bottom:0px;
+}
+
+#people-text {
+    display: flex;
+    justify-content: space-between;
+}
+
+#error-message {
+    color: var(--Red);
 }
 
 .attribution { font-size: 11px; text-align: center; }
