@@ -30,7 +30,7 @@ body {
 }
 
 header {
-    margin-top: 30px;
+    margin-top: 60px;
 }
 
 main {
@@ -191,6 +191,9 @@ output {
 .attribution a { color: hsl(228, 45%, 44%); }
 
 @media (min-width: 1000px) {
+    header {
+        margin-top: 0px;
+    }
 
     main {
         display: grid;
