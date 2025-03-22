@@ -48,12 +48,19 @@ function reset() {
     tipPerPersonOutput.textContent = "$0.00";
     totalPerPersonOutput.textContent = "$0.00";
     [billTotalInput, numberPeopleInput, customTipInput].forEach(input => input.value = "");
+    tipBtns.forEach(button => {
+        button.classList.remove("selected");
+    })
 }
 
 // Event handlers
 tipBtns.forEach(button => {
     button.addEventListener("click", (e) => {
         handleSubmit(e);
+        tipBtns.forEach(button => {
+            button.classList.remove("selected");
+        })
+        button.classList.add("selected");
         tipPerCent = Number(button.value)/100;
         if (!numberPeopleInput.value || numberPeopleInput.value == "0") {
             return
@@ -66,10 +73,20 @@ tipBtns.forEach(button => {
 });
 
 customTipInput.addEventListener("input", () => {
+    tipBtns.forEach(button => {
+        button.classList.remove("selected");
+    })
     tipPerCent = Number(customTipInput.value)/100;
     calculateTipAmount();
     calculateTotalAmount();
 })
+
+customTipInput.addEventListener("click", () => {
+    tipBtns.forEach(button => {
+        button.classList.remove("selected");
+    })
+})
+
 
 billTotalInput.addEventListener("input", ()=>{
     billValue = Number(billTotalInput.value);

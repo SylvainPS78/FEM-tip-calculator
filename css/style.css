@@ -129,7 +129,7 @@ input[type="number"] {
     color:var(--Green-900);
 }
 
-.tip:focus {
+.selected {
     background-color: var(--Green-400);
     color:var(--Green-900);
 }
