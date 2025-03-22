@@ -5,7 +5,8 @@
 }
 
 :root {
-    --Green-400: hsl(172, 67%, 45%);
+    --Green-400: rgb(38, 192, 171);
+    --Green-400-trans :rgba(38, 192, 171, 0.3);
     --Green-900: hsl(183, 100%, 15%);
     --Grey-500: hsl(186, 14%, 43%);
     --Grey-400: hsl(184, 14%, 56%);
@@ -19,9 +20,9 @@ body {
     background-color: var(--Grey-200);
     display:flex;
     flex-direction: column;
-    justify-content:center; /* TBD */
+    justify-content:center;
     align-items: center;
-    gap: 10px; /* TBD */
+    gap: 10px;
     height: 100vh;
     font-family: "Space Mono",sans-serif;
     font-size: 16px;
@@ -36,7 +37,7 @@ main {
     background-color: var(--White);
     border-radius: var(--border-radius);
     padding:20px;
-    width:320px; /* TBD */
+    width:320px;
     margin-top:20px;
 }
 
@@ -54,7 +55,7 @@ input {
     background-color:var(--Grey-50);
     text-align: end;
     padding: 10px;
-    max-width: 260px; /* TBD */
+    max-width: 260px;
     font-size: 24px;
     color:var(--Green-900);
     margin-bottom: 20px;
@@ -65,8 +66,6 @@ input {
 input::placeholder {
     color: var(--Grey-400);
 }
-
-
 
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
@@ -170,7 +169,7 @@ output {
 }
 
 #reset {
-    background-color: var(--Green-400);
+    background-color: var(--Green-400-trans);
     color: var(--Green-900);
     border:none;
     font-family: "Space Mono",sans-serif;
@@ -180,9 +179,66 @@ output {
     padding:10px 0px;
 }
 
+#reset:hover {
+    background-color: var(--Green-400);
+}
+
 #custom-tip {
     margin-bottom:0px;
 }
 
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
+
+@media (min-width: 1000px) {
+
+    main {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: 1;
+        gap: 40px;
+        padding:30px 40px;
+        width:920px;
+    }
+           
+    input {
+        max-width: 400px;
+    }
+
+    #bill-total {
+        background-position: 20px center;
+        width:378px;
+    }
+    
+    #number-people {
+        background-position: 20px center;
+        width:378px;
+    }
+    
+    #tip-selection {
+        gap: 15px;
+    }
+
+    #results {
+        padding:40px;
+        justify-content: center;
+        gap:0px;
+        border-radius: var(--border-radius)
+    }
+    
+    .result {
+        margin-bottom: 20px;
+    }
+
+    .result-subtitle {
+     font-size: 14px;
+    }
+        
+    output {
+        font-size: 40px;
+    }
+    
+    #reset {
+        margin-top: 100px;
+    }
+}
