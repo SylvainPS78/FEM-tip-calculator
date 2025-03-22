@@ -129,6 +129,11 @@ input[type="number"] {
     color:var(--Green-900);
 }
 
+.tip:focus {
+    background-color: var(--Green-400);
+    color:var(--Green-900);
+}
+
 input:hover {
     border:1px solid var(--Green-400);
 }
